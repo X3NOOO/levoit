@@ -270,12 +270,14 @@ namespace esphome
           // TODO!
           break;
         case 0x17:
-          ESP_LOGV(TAG_VITAL, "Dark Dedected=%u", (unsigned)t.value_u32);
-          // TODO!
+          ESP_LOGV(TAG_VITAL, "Dark Detected=%u", (unsigned)t.value_u32);
+          if (self != nullptr)
+            self->publish_binary_sensor(BinarySensorType::DARK_DETECTED, t.value_u32 == 1);
           break;
         case 0x18:
           ESP_LOGV(TAG_VITAL, "SleepModeType=%u", (unsigned)t.value_u32);
-          // TODO!
+          if (self != nullptr)
+            self->publish_select(SelectType::SLEEP_PREFERENCE, t.value_u32);
           break;
         case 0x19:
         {
@@ -300,10 +302,14 @@ namespace esphome
           ESP_LOGV(TAG_VITAL, "WhiteNoiseFanLevel=%u", (unsigned)t.value_u32);
           break;
         case 0x1F:
-          ESP_LOGV(TAG_VITAL, "SleepFanModeOrLevel=%u", (unsigned)t.value_u32);
+          ESP_LOGV(TAG_VITAL, "SleepFanLevel=%u", (unsigned)t.value_u32);
+          if (self != nullptr)
+            self->publish_number(NumberType::SLEEP_FAN_LEVEL, t.value_u32);
           break;
         case 0x20:
           ESP_LOGV(TAG_VITAL, "SleepModeMinutes=%u", (unsigned)t.value_u32);
+          if (self != nullptr)
+            self->publish_number(NumberType::SLEEP_MODE_MIN, t.value_u32);
           break;
         case 0x21:
           ESP_LOGV(TAG_VITAL, "DaytimeEnabled=%u", (unsigned)t.value_u32);

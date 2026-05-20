@@ -28,6 +28,8 @@ TYPE_MAP = {
     "quick_clean_min": NumberType.QUICK_CLEAN_MIN,
     "white_noise_min": NumberType.WHITE_NOISE_MIN,
     "sleep_mode_min": NumberType.SLEEP_MODE_MIN,
+    "sleep_minutes": NumberType.SLEEP_MODE_MIN,
+    "sleep_fan_level": NumberType.SLEEP_FAN_LEVEL,
     "filter_lifetime_months": NumberType.FILTER_LIFETIME_MONTHS,
     # Sprout only below
     "led_brightness_min": NumberType.LED_BRIGHTNESS_MIN,
@@ -68,6 +70,17 @@ TYPE_RANGE = {
     }),
     "white_noise_volume": (0.0, 255.0, 1.0, {
         CONF_ICON: "mdi:volume-high",
+        CONF_ENTITY_CATEGORY: ENTITY_CATEGORY_CONFIG,
+    }),
+    "sleep_minutes": (0.0, 720.0, 30.0, {
+        CONF_DEVICE_CLASS: "duration",
+        CONF_UNIT_OF_MEASUREMENT: "min",
+        CONF_ICON: "mdi:sleep",
+        CONF_ENTITY_CATEGORY: ENTITY_CATEGORY_CONFIG,
+    }),
+    # 5 = auto (MCU-decided), 1-4 = explicit fan level
+    "sleep_fan_level": (1.0, 5.0, 1.0, {
+        CONF_ICON: "mdi:fan",
         CONF_ENTITY_CATEGORY: ENTITY_CATEGORY_CONFIG,
     }),
 }

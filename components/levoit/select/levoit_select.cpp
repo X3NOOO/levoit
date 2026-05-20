@@ -46,6 +46,18 @@ namespace esphome
               "Sound 06", "Sound 07", "Sound 08", "Sound 09", "Sound 10",
               "Sound 11", "Sound 12", "Sound 13", "Sound 14", "Sound 15"});
           break;
+        case SelectType::SLEEP_PREFERENCE:
+          // TLV 0x18 byte values. Only 0x00 observed on this Vital 200S Pro
+          // (MCU 2.0.0). The other byte values (likely 0x01, 0x02, ...) are
+          // undiscoverable on this device because we no longer have VeSync-app
+          // access to cycle through the Sleep Preference UI — the ESP was
+          // reflashed with ESPHome, so the VeSync cloud path is gone.
+          // Future contributors who still run stock firmware can capture the
+          // additional values and extend this list (plus update the baseline
+          // doc). publish_select() ignores out-of-range indices, so unknown
+          // bytes will log a warning and leave state unchanged.
+          this->traits.set_options({"Default"});
+          break;
         default:
           break;
       }

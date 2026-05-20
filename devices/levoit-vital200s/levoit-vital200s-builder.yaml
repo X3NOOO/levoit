@@ -87,6 +87,14 @@ number:
     levoit: levoitvital200
     name: "Filter Months"
     type: filter_lifetime_months
+  - platform: levoit
+    levoit: levoitvital200
+    name: "Sleep Mode Minutes"
+    type: sleep_minutes
+  - platform: levoit
+    levoit: levoitvital200
+    name: "Sleep Fan Level (5=auto)"
+    type: sleep_fan_level
 
 sensor:
   - platform: levoit
@@ -111,6 +119,10 @@ select:
     levoit: levoitvital200
     name: "Auto Mode"
     type: auto_mode
+  - platform: levoit
+    levoit: levoitvital200
+    name: "Sleep Mode Type"
+    type: sleep_preference
 
 text_sensor:
   - platform: levoit
@@ -149,3 +161,7 @@ binary_sensor:
     levoit: levoitvital200
     name: "Filter Low"
     type: filter_low
+  - platform: levoit
+    levoit: levoitvital200
+    name: "Dark Detected"
+    type: dark_detected
