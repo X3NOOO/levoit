@@ -105,7 +105,7 @@ Auto mode options per model:
 |-------|---------|----------------|
 | C200S | — | up to 40 m² (430 ft²) |
 | C300S | Default / Quiet / Room Size | 9–50 m² (97–538 ft²) |
-| C400S | Default / Quiet / Room Size | 9–83 m² (97–894 ft²) |
+| C400S | Default / Quiet / Room Size | 9–38 m² (97–409 ft²) |
 | C600S | Default / Quiet / Room Size / ECO | 9–147 m² (97–1,582 ft²) |
 | V100S | Default / Quiet / Efficient | 9–52 m² (97–560 ft²) |
 | V200S | Default / Quiet / Efficient | 9–87 m² (97–936 ft²) |

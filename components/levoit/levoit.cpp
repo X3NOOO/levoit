@@ -461,7 +461,7 @@ namespace esphome
             if (model_ == ModelType::CORE300S)
                 cadr = 214; 
             if (model_ == ModelType::CORE400S)
-                cadr = 415;
+                cadr = 442;
             if (model_ == ModelType::CORE200S)
                 cadr = 167;
             if (model_ == ModelType::CORE600S)
