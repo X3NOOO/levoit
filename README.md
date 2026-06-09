@@ -128,9 +128,14 @@ Auto mode options per model:
 
 ### Change Log
 
-#### ESP Version: 1.4.0 - 2026.04
+#### ESP Version: 1.3.1 - 2026.06.09
 
-* Added Levoit Sprout support
+* Correct Core400S CADR and Room Size limits (@EdenNelson)
+* Fix ESPHome fan preset deprecation warning (@EdenNelson)
+* Add Vital 200S Pro support for MCU FW 2.0.0 with bulk-prefs SET (@TheDave94)
+* LevoitSwitch: set has_state on publish to match Select/Number behavior (@TheDave94)
+* Fix race condition where the led stays blinking even after conenction is restored (@Ahmed-max)
+* Remove error handling for sensor status for core series
 
 #### ESP Version: 1.3.0 - 2026.03.28
 
