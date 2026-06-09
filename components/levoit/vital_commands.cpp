@@ -182,6 +182,17 @@ namespace esphome
         payload = {0x01, 0x01, 0x02, 0x02, 0x02, 0xF4, 0x01, 0x03, 0x02, 0xF4, 0x01, 0x04, 0x01, 0x00};
         break;
 
+      case CommandType::setFilterLedOn:
+        // Tag 0x06 = DisplayIlluminated — same mechanism as display on/off
+        msg_type = {0x02, 0x06, 0x55};
+        payload = {0x01, 0x01, 0x01};
+        break;
+
+      case CommandType::setFilterLedOff:
+        msg_type = {0x02, 0x06, 0x55};
+        payload = {0x01, 0x01, 0x00};
+        break;
+
       default:
         ESP_LOGW(TAG_VITAL_CMD, "Command not implemented: %s", command_type_to_string(cmd));
         return {};

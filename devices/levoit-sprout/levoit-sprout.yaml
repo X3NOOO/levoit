@@ -17,22 +17,43 @@ substitutions:
 
 esphome:
   name: ${device_name}
-  includes:
-    - levoit_audio/levoit_audio.h
   platformio_options:
     extra_scripts:
-      - pre:build_assets.py
-  on_boot:
-    priority: -100
-    then:
-      - lambda: levoit_audio_setup();
+      - pre:../../../build_assets.py
+    board_build.cmake_extra_components:
+      - ../../../../components/levoit_audio
 
 esp32:
   board: esp32dev
-  flash_size: 8MB
-  partitions: partitions_custom.csv
+  flash_size: 4MB
+  partitions: partitions_4mb.csv
+  minimum_chip_revision: "3.1"
   framework:
     type: esp-idf
+
+external_components:
+  - source:
+      type: local
+      path: ../../components
+    components: [levoit_audio]
+
+levoit_audio:
+  bclk_pin: 5
+  lrclk_pin: 18
+  dout_pin: 17
+  amp_enable_pin: 19
+
+select:
+  # Audio files must be present in data/ — see data/README.md
+  - platform: levoit_audio
+    name: "White Noise Sound"
+    sounds:
+      - "Summer Rain"         # ./data/100001.mp3
+      - "Gentle Stream"       # ./data/100002.mp3
+#      - "Sound 03"            # ./data/100003.mp3
+#      - "Sound 04"           # ./data/100004.mp3
+#      - "Sound 05"           # ./data/100005.mp3
+#      - "Insects by Stream"  # ./data/100006.mp3
 
 packages:
   common: !include common.yaml

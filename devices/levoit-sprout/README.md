@@ -4,7 +4,7 @@
 
 Air purifier with 4 fan speeds. Unlike other Levoit models, the Sprout has two unique hardware features:
 
-- **White noise** — plays one of 15 built-in sounds stored as MP3s on the ESP32 flash (LittleFS `assets` partition). Volume and sound selection are controlled by the ESP32, not the MCU.
+- **White noise** — plays one of 15 built-in sounds stored as MP3s on the ESP32 flash (SPIFFS `assets` partition). Volume and sound selection are controlled by the ESP32, not the MCU.
 - **LED ring** — decorative RGB light ring on the front, controllable in nightlight (static color + brightness) or breathing (pulsing) mode.
 
 Uses the Vital flat-TLV protocol (`CMD=02 00 55`) as a base, with Sprout-specific extensions for the LED ring, white noise, PM sensors, and MCU async events.
@@ -16,7 +16,7 @@ Uses the Vital flat-TLV protocol (`CMD=02 00 55`) as a base, with Sprout-specifi
 | Model | Sprout |
 | Tested MCU FW | 1.0.5 |
 | ESP Module | ESP32-D0WDR2-V3 |
-| Flash | 8 MB |
+| Flash | 4 MB (some units 8 MB) |
 | Fan Speeds | 4 |
 | CADR (spec) | 144.5 m³/h |
 | Room Size | 9-30 m² |
@@ -100,7 +100,7 @@ or reverse?
 | LED Brightness Min | number | Breathing mode minimum brightness (0–255) |
 | LED Breathing Time | number | Breathing cycle duration in seconds (1–10) |
 | White Noise | switch | Enable / disable white noise playback |
-| White Noise Sound | select | Sound 01–15 (MP3/OGG stored in ESP32 flash — see note below about downloading all sounds) |
+| White Noise Sound | select | Off / sound 1–6 (MP3 files from `data/`, played by ESP32 via I2S) |
 | White Noise Volume | number | Playback volume (0–255). Handled by ESP32, not MCU |
 | Last MCU Event | text_sensor | Last async event from MCU (button press, white noise state change, cover) |
 | Cover Open | binary_sensor | Filter cover/door open sensor |
@@ -149,9 +149,8 @@ Connect **IO0 to GND before powering on** to enter bootloader mode.
 esptool.py --no-stub --chip esp32 -b 460800 read_flash 0 0x800000 firmware-backup.bin
 ```
 
-Extract audio assets (MP3s from LittleFS `assets` partition):
+Extract audio assets (MP3s from SPIFFS `assets` partition):
 ```bash
-pip install littlefs-python
 python extract_assets.py firmware-backup.bin
 # output written to assets_extracted/
 ```
@@ -166,16 +165,71 @@ python extract_assets.py firmware-backup.bin
 
 ### Audio Files
 
-| File | Sound | Source |
-|------|-------|--------|
-| `100001.ogg` | Summer rain | Pre-loaded |
-| `100002.mp3` | Gentle sea wave | Pre-loaded |
-| `100006.mp3` | Insects chirp by the stream | Pre-loaded |
-| `100009.mp3` | Morning seaside | Pre-loaded |
-| `1000012.mp3` | Sound 12 (name TBD) | Pre-loaded |
-| others | Remaining 10 sounds (names TBD) | Downloaded from app |
-| `bgm.mp3` | UI background music | Pre-loaded |
-| `switch.mp3` | Button click sound effect | Pre-loaded |
+Up to 6 MP3 files are supported (`100001.mp3` – `100006.mp3`). Place them in `devices/levoit-sprout/data/` before building.
+
+| File | 
+|------|
+| `100001.mp3` | 
+| `100002.mp3` |
+| `100003.mp3` | 
+| `100004.mp3` | 
+| `100005.mp3` | 
+| `100006.mp3` |
+
+> Only MP3 files are supported. Any `.ogg` files in `data/` are skipped with a warning during build.
+
+### Partition Table
+
+Two partition tables are provided — choose based on your flash size:
+
+| File | Flash | App slots | Assets partition |
+|------|-------|-----------|-----------------|
+| `partitions_4mb.csv` | 4 MB | 2 × 1.25 MB | ~1.44 MB at `0x290000` |
+| `partitions_custom.csv` | 8 MB | 2 × 1.5 MB | 2 MB at `0x320000` |
+
+`levoit-sprout.yaml` defaults to `partitions_4mb.csv` + `flash_size: 4MB`. To use the 8 MB table, change both values in the yaml and update the offsets in `build_assets.py`:
+
+```yaml
+esp32:
+  flash_size: 8MB
+  partitions: partitions_custom.csv
+```
+
+```python
+# build_assets.py
+ASSETS_PARTITION_OFFSET = 0x320000
+ASSETS_PARTITION_SIZE   = 0x200000   # 2 MB
+```
+
+### Flash Audio Assets
+
+The SPIFFS image is built automatically during `esphome compile` and placed at:
+```
+.esphome/build/levoit-sprout/.pioenvs/levoit-sprout/assets_spiffs.bin
+```
+
+**OTA does not flash the assets partition** — it only transfers the firmware binary. A **full wired USB flash is required the first time** to write the new partition table (which adds the `assets` entry) together with the firmware and SPIFFS image. After that, firmware updates can be done via OTA, and audio-only updates via the assets-only mode.
+
+Use the helper script `flash_assets.py` (auto-detects COM port, prompts if multiple):
+
+```bash
+# first time — flashes partition table + firmware + SPIFFS
+python flash_assets.py full
+
+# subsequent audio updates — SPIFFS only
+python flash_assets.py assets
+
+# explicit port
+python flash_assets.py full COM3
+```
+
+If no mode is given the script will ask interactively.
+
+Or manually with esptool (assets only):
+```bash
+python -m esptool --chip esp32 --port COMx --baud 460800 write_flash \
+  0x290000 .esphome/build/levoit-sprout/.pioenvs/levoit-sprout/assets_spiffs.bin
+```
 
 ### Configure
 

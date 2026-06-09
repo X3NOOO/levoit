@@ -1,17 +1,58 @@
-#Levoit Sprout — ESP32-C3 variant (local dev build)
+# Levoit Sprout
+#
+# Custom C++ I2S audio driver — plays white noise files directly from the
+# "assets" LittleFS partition on the ESP32 flash.
+#
+# I2S pins (confirmed by logic analyzer):
+#   GPIO 5  — BCLK   (~1.067 MHz, 16-bit stereo @ 32 kHz)
+#   GPIO 18 — LRCLK  (32 kHz word select)
+#   GPIO 17 — SD/DIN (serial data)
+#   GPIO 19 — ENABLE (NS4168 / MAX98357A amp enable)
+
 substitutions:
   device_name: levoit-sprout
   wifi_ap_ssid: "Levoit-Sprout"
-  rx_pin: GPIO23          # TODO: verify actual UART pins
+  rx_pin: GPIO23
   tx_pin: GPIO22
 
 esphome:
   name: ${device_name}
+  platformio_options:
+    extra_scripts:
+      - pre:../../../build_assets.py
+    board_build.cmake_extra_components:
+      - ../../../../components/levoit_audio
 
 esp32:
   board: esp32dev
+  flash_size: 4MB
+  partitions: partitions_4mb.csv
   framework:
     type: esp-idf
+
+external_components:
+  - source:
+      type: local
+      path: ../../components
+    components: [levoit_audio]
+
+levoit_audio:
+  bclk_pin: 5
+  lrclk_pin: 18
+  dout_pin: 17
+  amp_enable_pin: 19
+
+select:
+  # Audio files must be present in data/ — see data/README.md
+  - platform: levoit_audio
+    name: "White Noise Sound"
+    sounds:
+      - "Summer Rain"         # ./data/100001.mp3
+      - "Gentle Stream"       # ./data/100002.mp3
+#      - "Sound 03"            # ./data/100003.mp3
+#      - "Sound 04"           # ./data/100004.mp3
+#      - "Sound 05"           # ./data/100005.mp3
+#      - "Insects by Stream"  # ./data/100006.mp3
 
 packages:
   common: !include common.yaml
