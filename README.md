@@ -13,7 +13,7 @@ This is an external ESPHome component that supports all (WIP!) Core and Vital Ai
 
 Can be flashed to the original ESP32-SOLO-C1 or also installed on top (replace original), [check 'Installation'](./components/levoit/README.md)
 
-**Requires:** ESPHome 2026.01.2+
+**Requires:** ESPHome 2026.05.3+
 
 
 ### [Supported Models](./devices/README.md)
@@ -24,9 +24,16 @@ Can be flashed to the original ESP32-SOLO-C1 or also installed on top (replace o
 | [Levoit Core 300s](./devices/levoit-core300s) | 2.0.7, 2.0.11 | ✅ Tested  |
 | [Levoit Core 400s](./devices/levoit-core400s) | 3.0.0 | ✅ Tested  |
 | [Levoit Core 600s](./devices/levoit-core600s) | 2.0.1 | ✅ Tested |
-| [Levoit Vital 100s](./devices/levoit-vital100s) | 1.0.5 | ✅ Tested |
-| [Levoit Vital 200s (Pro)](./devices/levoit-vital200s) | 1.0.5 |  ✅ Tested |
-| [Levoit Sprout](./devices/levoit-sprout) | 1.0.5 |  ✅ Tested (!) WIP |
+| [Levoit Vital 100s](./devices/levoit-vital100s) | 1.0.5, 2.0.0(?) | ✅ Tested |
+| [Levoit Vital 200s (Pro)](./devices/levoit-vital200s) | 1.0.5, 2.0.0 Thanks @TheDave94 !|  ✅ Tested |
+
+#### Missing /WIP
+
+| Model | MCU Version | Status |
+|-------|-------------|--------|
+| [Levoit Sprout](./devices/levoit-sprout) | 1.0.5 |  ✅ Tested (!) WIP | 
+| [Levoit Core 400S-P Plasma Pro](./devices/xxx) | ??? | ??? |
+| [Levoit EverestAir Smart](./devices/xxx) | ??? | ??? |
 
 ### Other Models / Levoit Projects
 
@@ -105,7 +112,7 @@ Auto mode options per model:
 |-------|---------|----------------|
 | C200S | — | up to 40 m² (430 ft²) |
 | C300S | Default / Quiet / Room Size | 9–50 m² (97–538 ft²) |
-| C400S | Default / Quiet / Room Size | 9–83 m² (97–894 ft²) |
+| C400S | Default / Quiet / Room Size | 9–38 m² (97–409 ft²) |
 | C600S | Default / Quiet / Room Size / ECO | 9–147 m² (97–1,582 ft²) |
 | V100S | Default / Quiet / Efficient | 9–52 m² (97–560 ft²) |
 | V200S | Default / Quiet / Efficient | 9–87 m² (97–936 ft²) |
@@ -128,9 +135,16 @@ Auto mode options per model:
 
 ### Change Log
 
-#### ESP Version: 1.4.0 - 2026.04
+#### ESP Version: 1.3.1 - 2026.06.09
 
-* Added Levoit Sprout support
+* ESPHome min version updated to **2026.5.3**
+* Correct Core400S CADR and Room Size limits (@EdenNelson)
+* Fix ESPHome fan preset deprecation warning (@EdenNelson)
+* Add Vital 200S Pro support for MCU FW 2.0.0 with bulk-prefs SET (@TheDave94)
+* LevoitSwitch: set has_state on publish to match Select/Number behavior (@TheDave94)
+* Fix race condition where the led stays blinking even after conenction is restored (@Ahmed-max)
+* Remove error handling for sensor status for core series
+
 
 #### ESP Version: 1.3.0 - 2026.03.28
 

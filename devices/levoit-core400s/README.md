@@ -13,8 +13,8 @@ Started from community projects ([acvigue](https://github.com/acvigue/esphome-le
 | ESP Module | ESP32-SOLO-1C |
 | Board | CORE400S Ctrl V1.2 |
 | Fan Speeds | 4 |
-| CADR (spec) | 415 m³/h |
-| Room Size | 9–83 m² (97–894 ft²) |
+| CADR (spec) | 442 m³/h |
+| Room Size | 9–38 m² (97–409 ft²) |
 | ESPHome | 2026.1.2+ |
 | PM Sensor | PM2008MS  |
 
@@ -24,7 +24,7 @@ Started from community projects ([acvigue](https://github.com/acvigue/esphome-le
 |---------|------|-------|
 | Fan | fan | 4 speeds, presets: Manual / Auto / Sleep |
 | Auto Mode | select | Default / Quiet / Room Size |
-| Auto Mode Room Size | number | 9–83 m² |
+| Auto Mode Room Size | number | 9–38 m² |
 | Display | switch | Toggle LED display |
 | Child Lock | switch | |
 | PM2.5 | sensor | µg/m³ |

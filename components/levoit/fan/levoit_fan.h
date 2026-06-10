@@ -15,8 +15,11 @@ class LevoitFan final : public Component, public fan::Fan {
   void dump_config() override;
   void set_parent(Levoit *parent) { parent_ = parent; }
   void set_speed_count(int count) { this->speed_count_ = count; }
-  void set_preset_modes(std::initializer_list<const char *> presets) { this->preset_modes_ = presets; }
-  fan::FanTraits get_traits() override { return this->traits_; }
+  void set_preset_modes(std::initializer_list<const char *> presets) { this->set_supported_preset_modes(presets); }
+  fan::FanTraits get_traits() override {
+    this->wire_preset_modes_(this->traits_);
+    return this->traits_;
+  }
 
   void apply_device_status(int power, int speed_level, int mode);
 
@@ -27,7 +30,6 @@ class LevoitFan final : public Component, public fan::Fan {
   bool has_direction_{false};
   int speed_count_{0};
   fan::FanTraits traits_;
-  std::vector<const char *> preset_modes_{};
   Levoit *parent_{nullptr};
 };
 
