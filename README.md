@@ -26,7 +26,14 @@ Can be flashed to the original ESP32-SOLO-C1 or also installed on top (replace o
 | [Levoit Core 600s](./devices/levoit-core600s) | 2.0.1 | ✅ Tested |
 | [Levoit Vital 100s](./devices/levoit-vital100s) | 1.0.5, 2.0.0(?) | ✅ Tested |
 | [Levoit Vital 200s (Pro)](./devices/levoit-vital200s) | 1.0.5, 2.0.0 Thanks @TheDave94 !|  ✅ Tested |
-| [Levoit Sprout](./devices/levoit-sprout) | 1.0.5 |  ✅ Tested (!) WIP |
+
+#### Missing /WIP
+
+| Model | MCU Version | Status |
+|-------|-------------|--------|
+| [Levoit Sprout](./devices/levoit-sprout) | 1.0.5 |  ✅ Tested (!) WIP | 
+| [Levoit Core 400S-P Plasma Pro](./devices/xxx) | ??? | ??? |
+| [Levoit EverestAir Smart](./devices/xxx) | ??? | ??? |
 
 ### Other Models / Levoit Projects
 
