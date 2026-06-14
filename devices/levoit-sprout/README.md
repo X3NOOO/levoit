@@ -132,6 +132,7 @@ Twist open the top head counter clockwize
 ## Wiring New ESP
 
 > TODO: add wiring photos and pin mapping
+![Open Vital 100s](./images/uart_2_i2c.jpg)
 
 ## Flash
 
@@ -233,9 +234,15 @@ python -m esptool --chip esp32 --port COMx --baud 460800 write_flash \
 
 ### Configure
 
-1. Copy `secrets-example.yaml` → `secrets.yaml` and fill in your Wi-Fi and encryption key
-2. Check and update the UART pin assignments in `levoit-sprout-c3.yaml`
-3. Check the [component README](../../components/levoit/README.md) for UART pin mapping per board
+1. Download the vendored MP3 decoder header (required once per checkout, gitignored — without it the build fails with `fatal error: dr_mp3.h: No such file or directory`):
+   ```bash
+   curl -L https://raw.githubusercontent.com/mackron/dr_libs/master/dr_mp3.h \
+     -o ../../components/levoit_audio/vendor/dr_mp3.h
+   ```
+   See the [levoit_audio README](../../components/levoit_audio/README.md) for details.
+2. Copy `secrets-example.yaml` → `secrets.yaml` and fill in your Wi-Fi and encryption key
+3. Check and update the UART pin assignments in `levoit-sprout-c3.yaml`
+4. Check the [component README](../../components/levoit/README.md) for UART pin mapping per board
 
 ### Flash
 

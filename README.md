@@ -13,6 +13,8 @@ This is an external ESPHome component that supports all (WIP!) Core and Vital Ai
 
 Can be flashed to the original ESP32-SOLO-C1 or also installed on top (replace original), [check 'Installation'](./components/levoit/README.md)
 
+The Levoit Sprout additionally uses the [levoit_audio component](./components/levoit_audio/README.md) for white noise playback (MP3 from SPIFFS via I2S) — note its vendored `dr_mp3.h` build dependency.
+
 **Requires:** ESPHome 2026.05.3+
 
 
