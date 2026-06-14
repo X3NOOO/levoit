@@ -2,6 +2,8 @@
 
 # Project - Free Levoit Air Purifiers
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P4P721ETB5)
+
 Collection of custom ESPHome firmware and hardware projects for Levoit air purifiers, eliminating cloud dependency and enabling native Home Assistant integration.
 
 ![header](./header.jpg)
