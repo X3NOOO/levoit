@@ -73,8 +73,16 @@ number:
 sensor:
   - platform: levoit
     levoit: leveverestair
+    name: "PM 1.0"
+    type: pm1_0
+  - platform: levoit
+    levoit: leveverestair
     name: "PM 2.5"
     type: pm25
+  - platform: levoit
+    levoit: leveverestair
+    name: "PM 10"
+    type: pm10
   - platform: levoit
     levoit: leveverestair
     name: "AQI"

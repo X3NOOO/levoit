@@ -26,7 +26,9 @@
 | Display | switch | Toggle LED display |
 | Child Lock | switch | |
 | Light Detect | switch | Auto-dims display when ambient light is low |
+| PM1.0 | sensor | µg/m³ (3-channel PM monitor) |
 | PM2.5 | sensor | µg/m³ |
+| PM10 | sensor | µg/m³ (3-channel PM monitor) |
 | AQI | sensor | As reported by MCU |
 | Current CADR | sensor | m³/h, updated every 5s |
 | Filter Life Left | sensor | % remaining |
@@ -78,6 +80,8 @@ open. Opening the back also makes the MCU power the unit off (tag `0x02` Power �
 | `0x06` | Display | 0/1 |
 | `0x09` | AQI level | → AQI sensor |
 | `0x0B` | PM2.5 | µg/m³ |
+| `0x0C` | PM1.0 | µg/m³ (3-channel monitor) |
+| `0x0D` | PM10 | µg/m³ (3-channel monitor) |
 | `0x0E` | Child/display lock | 0/1 |
 | `0x0F` | Auto mode | 0=Default 3=Eco |
 | `0x13` | Light detect | 0/1 |

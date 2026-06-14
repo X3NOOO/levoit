@@ -369,15 +369,16 @@ namespace esphome
           }
           break;
 
-        // Sprout-specific tags (also present in CMD=02 00 55, same TLV format)
+        // PM1.0 / PM10 channels — present on Sprout and EverestAir (3-channel
+        // PM monitor). Same flat-TLV format as PM2.5 (tag 0x0B).
         case 0x0C:
-          ESP_LOGV(TAG_VITAL, "PM1.0_raw=%u", (unsigned)t.value_u32);
-          if (self != nullptr && model == ModelType::SPROUT)
+          ESP_LOGV(TAG_VITAL, "PM1.0=%u", (unsigned)t.value_u32);
+          if (self != nullptr && (model == ModelType::SPROUT || model == ModelType::EVERESTAIR))
             self->publish_sensor(SensorType::PM1_0, (unsigned)t.value_u32);
           break;
         case 0x0D:
-          ESP_LOGV(TAG_VITAL, "PM10_raw=%u", (unsigned)t.value_u32);
-          if (self != nullptr && model == ModelType::SPROUT)
+          ESP_LOGV(TAG_VITAL, "PM10=%u", (unsigned)t.value_u32);
+          if (self != nullptr && (model == ModelType::SPROUT || model == ModelType::EVERESTAIR))
             self->publish_sensor(SensorType::PM10, (unsigned)t.value_u32);
           break;
         case 0x24:
