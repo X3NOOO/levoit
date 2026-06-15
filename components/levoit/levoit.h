@@ -52,6 +52,9 @@ class Levoit : public Component, public uart::UARTDevice {
   void register_binary_sensor(BinarySensorType type, class LevoitBinarySensor *bs);
   void register_button(ButtonType type, class LevoitButton *btn);
   void publish_binary_sensor(BinarySensorType type, bool state);
+  // EverestAir: filter % pushed to the MCU panel (read by setFilterPercent builder)
+  uint8_t get_pending_filter_pct() const { return pending_filter_pct_; }
+  void set_pending_filter_pct(uint8_t pct) { pending_filter_pct_ = pct > 100 ? 100 : pct; }
   // Sprout LED ring light
   void register_light(LevoitSproutLight *light) { sprout_light_ = light; }
   LevoitSproutLight *get_sprout_light() const { return sprout_light_; }
@@ -65,6 +68,8 @@ class Levoit : public Component, public uart::UARTDevice {
   uint16_t get_pending_aqi() const { return pending_aqi_; }
   // helper to compute and publish filter stats immediately
   void publish_filter_stats_now();
+  // EverestAir: push computed filter % to the MCU panel when it changes
+  void push_filter_pct_if_changed(float filter_left);
 
       
         
@@ -166,6 +171,10 @@ class Levoit : public Component, public uart::UARTDevice {
   uint16_t pending_led_ct_{3500};    // Kelvin
   // Last AQI value to push to MCU display — set by send_aqi_to_mcu, read by setSproutAqiScale
   uint16_t pending_aqi_{0};
+  // Filter % to push to the EverestAir MCU panel — read by setFilterPercent,
+  // set from calculate_filter_life_left_percent() via push_filter_pct_if_changed().
+  uint8_t pending_filter_pct_{100};
+  int last_sent_filter_pct_{-1};  // last % sent to MCU; -1 = none yet (dedup)
   bool display_on_{false};
 
   uint16_t cadr = 235;

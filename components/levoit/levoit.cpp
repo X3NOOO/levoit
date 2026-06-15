@@ -254,6 +254,25 @@ namespace esphome
                 se->publish_state(filter_left);
 #endif
             this->publish_binary_sensor(BinarySensorType::FILTER_LOW, filter_left < 5.0f);
+            this->push_filter_pct_if_changed(filter_left);
+        }
+
+        // EverestAir: mirror the ESP-computed filter % onto the MCU's panel
+        // indicator via CMD=02 05 55. Only sends when the rounded integer %
+        // changes, so the periodic recompute doesn't spam the MCU.
+        void Levoit::push_filter_pct_if_changed(float filter_left)
+        {
+            if (this->model_ != ModelType::EVERESTAIR)
+                return;
+            int pct = static_cast<int>(filter_left + 0.5f);
+            if (pct < 0) pct = 0;
+            if (pct > 100) pct = 100;
+            if (pct == this->last_sent_filter_pct_)
+                return;
+            this->last_sent_filter_pct_ = pct;
+            this->set_pending_filter_pct(static_cast<uint8_t>(pct));
+            this->sendCommand(CommandType::setFilterPercent);
+            ESP_LOGD(TAG, "Pushed filter %% to MCU panel: %d%%", pct);
         }
         void Levoit::on_switch_command(SwitchType type, bool state)
         {
@@ -592,7 +611,16 @@ namespace esphome
             this->sendCommand(CommandType::setFilterLedOn);
             filter_led_on_ = true;
             filter_blinking_ = true;
-            
+
+            // EverestAir: push the computed filter % to the MCU panel on boot
+            // (delay so the MCU has finished booting), then keep it in sync
+            // whenever the value changes (see push_filter_pct_if_changed).
+            if (this->model_ == ModelType::EVERESTAIR) {
+                this->set_timeout("everest_filter_init", 3000, [this]() {
+                    this->push_filter_pct_if_changed(this->calculate_filter_life_left_percent());
+                });
+            }
+
             // Track CADR on initial setup
             track_cadr_usage();
         }
@@ -623,7 +651,8 @@ namespace esphome
                 if (se != nullptr)
                     se->publish_state(filter_left);
 #endif
-                
+                this->push_filter_pct_if_changed(filter_left);
+
                 // Save to preferences every minute when running
                 pref_used_cadr_.save(&used_cadr_);
                 pref_total_runtime_.save(&total_runtime_);
@@ -786,6 +815,7 @@ namespace esphome
                     se->publish_state(filter_left);
 #endif
                 this->publish_binary_sensor(BinarySensorType::FILTER_LOW, filter_left < 5.0f);
+                this->push_filter_pct_if_changed(filter_left);
             }
 
             if (this->timer_active_ && now - last_check >= 10000)

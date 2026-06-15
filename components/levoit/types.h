@@ -218,6 +218,7 @@ namespace esphome
             setSproutAqiScale,          // CMD=02 06 55: sets AQI display scale max (0–500)
             setBulkPrefs,               // CMD=02 02 55 tags 0x04..0x0F: bulk sleep/QC/WN/DT prefs (12 TLVs, Vital)
             setVentAngle,               // CMD=02 12 55: EverestAir vent louver angle (45–90°)
+            setFilterPercent,           // CMD=02 05 55: EverestAir filter % pushed to MCU panel (0–100)
             COMMAND_TYPE_MAX
 
             // dedicated command for setSleepModeCustom
@@ -272,6 +273,7 @@ namespace esphome
                 "setSproutAqiScale",
                 "setBulkPrefs",
                 "setVentAngle",
+                "setFilterPercent",
             };
             static_assert(
                 sizeof(names) / sizeof(names[0]) == COMMAND_TYPE_MAX,

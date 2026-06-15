@@ -55,6 +55,7 @@ The one device-specific feature is the **motorized vent louver**:
 | `02 03 55` | ESP→MCU | Set manual fan level 1–3: PAY=`01 01 <1..3>` (also forces FanMode→Manual) |
 | `02 02 55` | ESP→MCU | Set fan mode: PAY=`01 01 <m>` — `00`=Manual, `01`=Sleep, `02`=Auto, **`04`=Turbo** (no Pet) |
 | `02 02 55` | ESP→MCU | Set Auto Mode: PAY=`02 01 <a> 03 02 00 00` — `00`=Default, `03`=Eco (status tag `0x0F`) |
+| `02 05 55` | ESP→MCU | Set filter %: PAY=`02 01 <pct>` (0–100). The ESP computes filter life and pushes it to the MCU's panel indicator |
 
 **Fan speeds:** the unit has 3 manual fan levels (`02 03 55`). The top "Turbo"
 step is *not* fan level 4 — it's a distinct fan mode (`02 02 55 = 04`), so it's

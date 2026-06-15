@@ -320,6 +320,19 @@ namespace esphome
         payload = {0x01, 0x01, 0x00};
         break;
 
+      case CommandType::setFilterPercent:
+      {
+        // EverestAir: push computed filter % to the MCU so the panel indicator
+        // matches. CMD=02 05 55, PAY=02 01 <pct>. Discovered from a startup
+        // capture sending `02 05 55 02 01 64` (=100%). Value is 0–100.
+        msg_type = {0x02, 0x05, 0x55};
+        uint8_t pct = self->get_pending_filter_pct();
+        if (pct > 100) pct = 100;
+        ESP_LOGD(TAG_VITAL_CMD, "setFilterPercent: %u%%", pct);
+        payload = {0x02, 0x01, pct};
+        break;
+      }
+
       case CommandType::setVentAngle:
       {
         // EverestAir vent louver angle. CMD=02 12 55, PAY=01 01 <deg>.
