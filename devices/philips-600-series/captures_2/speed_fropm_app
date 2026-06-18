@@ -1,0 +1,153 @@
+turbo-mid-sleep-auto
+
+name	type	start_time	duration	text
+philips_uart	packet	0.1095744	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	0.1546654	0.0043668	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 00 0D 01 12 20 01 0A 21 02 00 3D 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=B0 C9
+philips_uart	packet	0.5896782	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	0.633983	0.0015088	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	0.6371064	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	0.6789248	0.0017702	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	0.6820502	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	0.7238724	0.0020322	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	1.1096072	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	1.153292	0.0043662	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 00 0D 01 12 20 01 0A 21 02 00 3C 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=40 F8
+philips_uart	packet	1.5896798	0.000777	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	1.6325904	0.001509	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	1.6356806	0.000777	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	1.6775268	0.00177	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	1.6806678	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	1.722469	0.0020298	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	2.1095978	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	2.151932	0.0043668	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 00 0D 01 12 20 01 0A 21 02 00 3D 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=B0 C9
+philips_uart	packet	2.5896812	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	2.6312222	0.0015088	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	2.6342576	0.000777	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	2.6761588	0.0017698	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	2.6794476	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	2.7210962	0.0020296	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	3.1095792	0.000777	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	3.15047	0.0043644	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 00 0D 01 12 20 01 0A 21 02 00 3C 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=40 F8
+philips_uart	packet	3.1964074	0.0010374	[module->MCU] SET(0x0003)  |  LEN=5  |  DATA=03 0C 01 12 00  |  CRC=E2 CD
+philips_uart [1]	packet	3.2403886	0.0043698	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 12 0D 01 12 20 01 0A 21 02 00 3C 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=60 D2
+philips_uart	packet	3.5899344	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	3.6346392	0.0015084	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	3.637701	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	3.6795626	0.0017694	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	3.6827588	0.000777	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	3.724487	0.0020286	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	4.1099456	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	4.1538758	0.0043666	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 12 0D 01 12 20 01 0A 21 02 00 3B 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=90 07
+philips_uart	packet	4.589657	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	4.6331382	0.001509	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	4.6362398	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	4.6780698	0.0017694	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	4.6812032	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	4.7229992	0.0020294	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	5.1095318	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	5.152367	0.0043672	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 12 0D 01 12 20 01 0A 21 02 00 3B 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=90 07
+philips_uart	packet	5.5896576	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	5.631537	0.001509	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	5.6348244	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	5.6764666	0.0017696	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	5.6800652	0.000777	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	5.721393	0.0020296	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	6.1096608	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=05  |  LEN=2  |  DATA=05 00  |  CRC=E2 FA
+philips_uart [1]	packet	6.1506826	0.0030228	[MCU->module] STATUS(0x0007)  |  LEN=27  |  DATA=00 05 01 02 00 00 07 02 02 D0 08 04 00 00 12 C0 0D 02 02 D0 0E 04 00 00 12 C0 00  |  CRC=A8 67
+philips_uart	packet	6.1554166	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	6.2006104	0.004367	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 12 0D 01 12 20 01 0A 21 02 00 3A 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=60 36
+philips_uart	packet	6.5896572	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	6.634829	0.0015082	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	6.6378914	0.000777	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	6.6797578	0.0017696	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	6.6830316	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	6.7246928	0.0020294	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	7.1095786	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	7.1540482	0.0043676	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 12 0D 01 12 20 01 0A 21 02 00 39 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=60 44
+philips_uart	packet	7.576027	0.0010372	[module->MCU] SET(0x0003)  |  LEN=5  |  DATA=03 0C 01 01 00  |  CRC=B4 ED
+philips_uart [1]	packet	7.6183608	0.0045464	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 01 0D 01 03 20 01 0A 21 02 00 39 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=3A 8A
+philips_uart	packet	7.6248766	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	7.6681808	0.0015592	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	7.6748656	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	7.7180992	0.001846	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	7.7214546	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	7.7630406	0.002751	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	8.1096404	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	8.1524602	0.004727	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 01 0D 01 03 20 01 0A 21 02 00 39 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=3A 8A
+philips_uart	packet	8.5896328	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	8.6315378	0.001558	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	8.6346784	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	8.6764616	0.001994	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	8.6797832	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	8.721382	0.0021396	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	9.1095532	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	9.150754	0.0047284	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 01 0D 01 03 20 01 0A 21 02 00 39 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=3A 8A
+philips_uart	packet	9.5895126	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	9.6348482	0.0020078	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	9.6386428	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	9.6797708	0.0018442	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	9.6829002	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	9.7247176	0.0022546	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	10.1095102	0.000777	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	10.1540044	0.004586	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 01 0D 01 03 20 01 0A 21 02 00 38 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=CA BB
+philips_uart	packet	10.5896336	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	10.6331026	0.002008	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	10.63666	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	10.6780184	0.0018422	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	10.6813728	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	10.7229568	0.0022542	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	10.8793174	0.0010372	[module->MCU] SET(0x0003)  |  LEN=5  |  DATA=03 0C 01 11 00  |  CRC=B7 9E
+philips_uart [1]	packet	10.9227022	0.0046908	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 11 0D 01 01 20 01 0A 21 02 00 38 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=28 D1
+philips_uart	packet	11.1096514	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	11.152244	0.004574	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 11 0D 01 01 20 01 0A 21 02 00 38 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=28 D1
+philips_uart	packet	11.5896176	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	11.6313626	0.001559	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	11.6344572	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	11.6762924	0.0018418	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	11.679819	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	11.721216	0.002268	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	12.109639	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	12.1554282	0.004712	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 11 0D 01 01 20 01 0A 21 02 00 38 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=28 D1
+philips_uart	packet	12.5896292	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	12.634512	0.0015582	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	12.6376694	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	12.6794356	0.0018432	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	12.6825992	0.000777	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	12.724352	0.002127	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	13.1096322	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	13.1536556	0.0047136	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 11 0D 01 01 20 01 0A 21 02 00 38 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=28 D1
+philips_uart	packet	13.5895958	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	13.632782	0.0015586	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	13.6359272	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	13.6777062	0.0018432	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	13.6809154	0.000777	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	13.7226354	0.0021276	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	13.9761596	0.0010372	[module->MCU] SET(0x0003)  |  LEN=5  |  DATA=03 0C 01 00 00  |  CRC=87 DC
+philips_uart [1]	packet	14.0222488	0.0043654	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 00 0D 01 12 20 01 0A 21 02 00 38 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=B0 5F
+philips_uart	packet	14.1096558	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	14.1519826	0.0043668	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 00 0D 01 12 20 01 0A 21 02 00 38 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=B0 5F
+philips_uart	packet	14.5896158	0.000777	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	14.6311564	0.0015106	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	14.6341834	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	14.676087	0.0017694	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	14.679868	0.000777	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	14.7210172	0.0020302	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	15.1094972	0.000777	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	15.150289	0.0043652	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 00 0D 01 12 20 01 0A 21 02 00 38 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=B0 5F
+philips_uart	packet	15.5896168	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	15.634475	0.0015086	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	15.6375312	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	15.6793952	0.001769	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	15.6826422	0.000777	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	15.724319	0.0020292	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	16.1095282	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=05  |  LEN=2  |  DATA=05 00  |  CRC=E2 FA
+philips_uart [1]	packet	16.1535476	0.003021	[MCU->module] STATUS(0x0007)  |  LEN=27  |  DATA=00 05 01 02 00 00 07 02 02 D0 08 04 00 00 12 C0 0D 02 02 D0 0E 04 00 00 12 C0 00  |  CRC=A8 67
+philips_uart	packet	16.1581752	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	16.203472	0.0043642	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 00 0D 01 12 20 01 0A 21 02 00 38 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=B0 5F
+philips_uart	packet	16.5896028	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=0C  |  LEN=2  |  DATA=0C 00  |  CRC=58 62
+philips_uart [1]	packet	16.6326674	0.0015086	[MCU->module] STATUS(0x0007)  |  LEN=10  |  DATA=00 0C 01 02 00 00 02 01 00 00  |  CRC=A9 41
+philips_uart	packet	16.6357528	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=02  |  LEN=2  |  DATA=02 00  |  CRC=7B 6D
+philips_uart [1]	packet	16.6775914	0.0017694	[MCU->module] STATUS(0x0007)  |  LEN=13  |  DATA=00 02 01 02 00 00 02 01 04 03 01 01 00  |  CRC=1B BD
+philips_uart	packet	16.6806642	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=04  |  LEN=2  |  DATA=04 00  |  CRC=D1 CB
+philips_uart [1]	packet	16.7225166	0.0020314	[MCU->module] STATUS(0x0007)  |  LEN=16  |  DATA=00 04 01 02 00 00 02 01 00 03 01 00 04 01 00 00  |  CRC=55 55
+philips_uart	packet	17.1094946	0.0007768	[module->MCU] QUERY(0x0004)  GROUP=03  |  LEN=2  |  DATA=03 00  |  CRC=48 5C
+philips_uart [1]	packet	17.151825	0.0043658	[MCU->module] STATUS(0x0007)  |  LEN=42  |  DATA=00 03 01 02 00 00 02 01 01 0A 01 02 0C 01 00 0D 01 12 20 01 0A 21 02 00 38 2A 01 01 2B 01 01 2C 01 04 34 01 01 40 02 00 00 00  |  CRC=B0 5F

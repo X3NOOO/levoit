@@ -1,0 +1,40 @@
+# AC0651/10 C3 dev variant — same as AC0650 plus the PM1003 PM2.5 sensor,
+# the allergen/AQI index, and an Auto fan preset (added automatically by model).
+# NOTE: verify the UART pins against your wiring.
+substitutions:
+  device_name: philips-ac0651-c3
+  wifi_ap_ssid: "Philips-AC0651"
+  philips_model: AC0651
+  rx_pin: GPIO20   # XIAO C3 D7 — MCU TX → ESP RX
+  tx_pin: GPIO21   # XIAO C3 D6 — ESP TX → MCU RX
+
+esphome:
+  name: ${device_name}
+
+esp32:
+  board: seeed_xiao_esp32c3
+  framework:
+    type: esp-idf
+
+packages:
+  common: !include common.yaml
+
+logger:
+  level: VERBOSE   # VERBOSE shows the raw UART frames (TX -> / RX <-)
+
+# AC0651-only entities (added on top of common.yaml).
+sensor:
+  - platform: philips
+    philips: purifier
+    name: "PM2.5"
+    type: pm2_5
+  - platform: philips
+    philips: purifier
+    name: "Allergen Index"
+    type: allergen_index
+
+switch:
+  - platform: philips
+    philips: purifier
+    name: "Standby Sensor Monitoring"
+    type: standby_sensor

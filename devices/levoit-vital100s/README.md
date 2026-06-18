@@ -15,7 +15,7 @@
 | Noise | 23–52 dB |
 | Room Size | 9–52 m² (97–560 ft²) |
 | ESPHome | 2026.1.2+ |
-
+| Sensor | PM1003 |
 ## Features
 
 | Feature | Type | Notes |

@@ -1,0 +1,22 @@
+# Dev variant — same board as philips-ac0650.yaml but with verbose logging,
+# for developing/testing the local `philips` component.
+substitutions:
+  device_name: philips-ac0650
+  wifi_ap_ssid: "Philips-AC0650"
+  philips_model: AC0650
+  rx_pin: GPIO20
+  tx_pin: GPIO21
+
+esphome:
+  name: ${device_name}
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: esp-idf
+
+packages:
+  common: !include common.yaml
+
+logger:
+  level: VERBOSE   # VERBOSE shows the raw UART frames (TX -> / RX <-)

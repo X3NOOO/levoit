@@ -5,8 +5,8 @@
 substitutions:
   device_name: levoit-everest-air-c3
   wifi_ap_ssid: "Levoit-EverestAir"
-  rx_pin: GPIO05
-  tx_pin: GPIO06
+  rx_pin: GPIO05 #D4 TP82
+  tx_pin: GPIO06 #D3 TP33 
 
 esphome:
   name: ${device_name}

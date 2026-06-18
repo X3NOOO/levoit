@@ -1,0 +1,13 @@
+{
+  "name": "Philips UART Extractor",
+  "apiVersion": "1.0.0",
+  "author": "@tuct",
+  "version": "0.0.1",
+  "description": "Decodes the Philips / MUJI (Versuni) air-purifier FE-FF UART protocol",
+  "extensions": {
+    "philips_uart": {
+      "type": "HighLevelAnalyzer",
+      "entryPoint": "HighLevelAnalyzer.PhilipsExtractor"
+    }
+  }
+}

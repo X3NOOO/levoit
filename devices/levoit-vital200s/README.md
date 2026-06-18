@@ -17,6 +17,7 @@ Same protocol as the Vital 100S. Tested with original ESP by @dnsefe.
 | Noise | 23–58 dB |
 | Room Size | 9–87 m² (97–936 ft²) |
 | ESPHome | 2026.1.2+ |
+| Sensor |PM1003 |
 
 ## Features
 
