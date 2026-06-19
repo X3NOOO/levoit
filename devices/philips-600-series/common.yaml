@@ -62,3 +62,9 @@ button:
     philips: purifier
     name: "Reset HEPA Filter"
     type: reset_hepa
+
+text_sensor:
+  - platform: philips
+    philips: purifier
+    name: "MCU Version"
+    type: mcu_version
