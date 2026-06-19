@@ -35,8 +35,8 @@ Every purifier covered here at a glance — how it's converted to ESPHome, its s
 | [Sprout](./devices/levoit-sprout) | Levoit | 🟢 Flash / 🔵 Add ESP | 145 m³/h | 22–47 dB | Easy | [Guide](./devices/levoit-sprout) | [Amazon](https://amzn.to/4oAJs1n) | 🚧 WIP · white-noise audio (I2S MP3) |
 | [LV PUR 131S](./devices/levoit-lv131s/) | Levoit | 🔴 Custom HW | — | — | Medium | [Guide](./devices/levoit-lv131s/) | — | Custom FW + MCU & sensor upgrade |
 | [Levoit Mini](./devices/levoit-mini) | Levoit | 🔴 Custom HW | 78 m³/h | 41.8 – 53.6 dBA | Easy | [Guide](./devices/levoit-mini) | [Amazon](https://amzn.to/4acovEh) | Full custom PCB + 3D parts |
-| [Philips / MUJI AC0650](./devices/philips-600-series) | Philips| 🔵 Add ESP | 170 m³/h | 19–49 dB | Easy | [Guide](./devices/philips-600-series) | [Amazon](https://amzn.to/4vS5Ohs) | ✅ Tested · secure boot → replace module; no AQ sensor |
-| [Philips / MUJI AC0651](./devices/philips-600-series) | Philips| 🔵 Add ESP | 170 m³/h | 19–49 dB | Easy | [Guide](./devices/philips-600-series) | [Amazon](https://amzn.to/4elkSyg) | ✅ Tested · adds PM2.5 (PM1003) + Auto mode |
+| [Philips AC0650](./devices/philips-600-series) | Philips| 🔵 Add ESP | 170 m³/h | 19–49 dB | Easy | [Guide](./devices/philips-600-series) | [Amazon](https://amzn.to/4vS5Ohs) | ✅ Tested · secure boot → replace module; no AQ sensor |
+| [Philips AC0651](./devices/philips-600-series) | Philips| 🔵 Add ESP | 170 m³/h | 19–49 dB | Easy | [Guide](./devices/philips-600-series) | [Amazon](https://amzn.to/4elkSyg) | ✅ Tested · adds PM2.5 (PM1003) + Auto mode |
 | [IKEA Förnuftig](https://edvoncken.net/2024/04/ikea-fornuftig-with-esphome/) | IKEA | 🔴 Custom HW | 120 m³/h | 28–60 dB | Easy | [Blog ↗](https://edvoncken.net/2024/04/ikea-fornuftig-with-esphome/) · [C6 ↗](https://github.com/horvathgergo/esp32c6-for-fornuftig) | — | 🔗 External · dumb 3-speed fan, ESP added for control |
 | [IKEA Uppåtvind](https://github.com/jonathonlui/esphome-ikea-uppatvind) | IKEA | 🔴 Custom HW | 95 m³/h | 42.5–53.8 dB | Easy | [GitHub ↗](https://github.com/jonathonlui/esphome-ikea-uppatvind) | — | 🔗 External · small desk purifier, ESP added for control |
 
@@ -58,7 +58,7 @@ Supports the Philips-made (Versuni) **600 Series** sold under the MUJI brand —
 | Model | MCU Version | Status | Notes | Amazon Link |
 |-------|-------------|--------|-------|------|
 | [Philips / MUJI AC0650](./devices/philips-600-series) | 0.1.9 | ✅ Tested | Fan, filters | [Amazon](https://amzn.to/4vS5Ohs) |
-| [Philips / MUJI AC0651](./devices/philips-600-series) | ? | ✅ Tested | Adds PM2.5 (PM1003), allergen index, Auto mode, standby sensor | [Amazon](https://amzn.to/4elkSyg) |
+| [Philips / MUJI AC0651](./devices/philips-600-series) | 0.2.1 | ✅ Tested | Adds PM2.5 (PM1003), allergen index, Auto mode, standby sensor | [Amazon](https://amzn.to/4elkSyg) |
 
 
 ## [Esphome external component for Levoit Air Purifiers](./components/levoit/README.md)
