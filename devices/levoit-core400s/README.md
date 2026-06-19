@@ -17,7 +17,7 @@ Started from community projects ([acvigue](https://github.com/acvigue/esphome-le
 | Noise | 24–52 dB |
 | Room Size | 9–38 m² (97–409 ft²) |
 | ESPHome | 2026.1.2+ |
-| PM Sensor | PM2008MS  |
+| PM Sensor | PM2008MS |
 
 ## Features
 
@@ -75,7 +75,20 @@ I had to use extended wires for re-assembly, did not find another way!
 | 5 | IO0 |
 | 6 | EN |
 
+## Install New ESP32 (Recommended)
 
+Replacing the original ESP32 lets you keep the original firmware intact and switch back easily.
+
+**Recommended modules:**
+- Seeed XIAO ESP32-C3
+- Seeed XIAO ESP32-S3
+
+**Wiring:** 4 wires — `+3.3V`, `GND`, `RX`, `TX`
+
+> The RX/TX pads are **not** on the pin header — use the test pads near the original ESP32 on the board.
+> Pull the `EN` pin of the original ESP32 to GND to disable it.
+
+> TODO: add wiring photos and placement photos
 
 ## Flash Original ESP32
 
@@ -125,18 +138,3 @@ Upload to the [ESPHome web builder](https://builder.esphome.io) or paste into th
 esptool erase_flash
 esptool write_flash 0x00 levoit-core400s-backup.bin
 ```
-
-## Install New ESP32 (Recommended)
-
-Replacing the original ESP32 lets you keep the original firmware intact and switch back easily.
-
-**Recommended modules:**
-- Seeed XIAO ESP32-C3
-- Seeed XIAO ESP32-S3
-
-**Wiring:** 4 wires — `+3.3V`, `GND`, `RX`, `TX`
-
-> The RX/TX pads are **not** on the pin header — use the test pads near the original ESP32 on the board.
-> Pull the `EN` pin of the original ESP32 to GND to disable it.
-
-> TODO: add wiring photos and placement photos

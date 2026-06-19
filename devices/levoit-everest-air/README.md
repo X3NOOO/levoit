@@ -7,7 +7,7 @@
 | Item | Value |
 |------|-------|
 | Model | Everest Air |
-| Tested MCU FW | 1.0.02 |
+| Tested MCU FW | 1.0.2 |
 | ESP Module | ESP32-SOLO-1 |
 | Board | xxx |
 | Fan Speeds | 3 + Turbo |
@@ -15,7 +15,7 @@
 | Noise | 24–56 dB |
 | Room Size | 9–123 m² (97–1328 ft²) |
 | ESPHome | 2026.5.3+ |
-
+| PM Sensor | PM1.0 / PM2.5 / PM10 |
 
 ## Features
 
@@ -39,6 +39,92 @@
 | MCU Version | text_sensor | |
 | Vent Angle | number | EverestAir-specific motorized louver, 45–90° |
 | Cover Open | binary_sensor | Back/filter door open — unit powers off while open |
+
+## Teardown / Disassembly
+Remove 3 black skrews from top
+
+![Remove Skrews](./images/back_remove_skrews.jpg)
+
+Carefully start to open from the back, pull up with help from some clips
+
+![Open](./images/back_open.jpg)
+
+Pull up left and right and remove the top
+
+![Open](./images/opened.jpg)
+
+
+## Debug Header Pinout
+
+| Pin | Signal |
+|-----|--------|
+| 1 | EN (reset) |
+| 2 | GND |
+| 3 | 3.3V |
+| 4 | TX |
+| 5 | RX |
+| 6 | IO0 |
+
+## Install New ESP32 (Recommended)
+
+Make sure to connect EN (reset) to GND on the Debug Header to dissable the old ESP32
+
+Pinout: 
+
+![Board pinout](./images/Uart_pins.jpg)
+![Board pinout](./images/power_pins.jpg)
+
+![Board pinout](./images/all_connected.jpg)
+
+### Configure
+
+1. Copy `secrets-example.yaml` → `secrets.yaml` and fill in your Wi-Fi and encryption key
+2. Adjust the device name in the config if running multiple units
+3. Check the [component README](../../components/levoit/README.md) for UART pin mapping per board
+
+### ESPHome Web Builder / Dashboard
+
+Use the pre-generated builder yaml to flash without a local clone — all config is inlined, no `!include` or packages needed:
+
+| File | Board |
+|------|-------|
+| `levoit-everest-air-builder.yaml` | original ESP32-C3-SOLO-1 |
+| `levoit-everest-air-builder-c3.yaml` | ESP32-C3 replacement |
+| `levoit-everest-air-builder-s3.yaml` | ESP32-S3 replacement |
+
+Upload to the [ESPHome web builder](https://builder.esphome.io) or paste into the ESPHome dashboard. Regenerate with `.\make-builder-yaml.ps1` from the `devices/` folder.
+
+Or run 
+```bash
+esphome run levoit-everest-air.yaml
+```
+
+Reassemble and enjoy!
+
+## Flash Original ESP32
+
+### Prerequisites
+
+Connect to the debug header with a USB-UART adapter (3.3V TTL), crossing TX/RX:
+- Adapter TX →  RX
+- Adapter RX →  TX
+
+Connect **IO0 to GND before powering on** to enter bootloader mode.
+
+### Backup Existing Firmware
+
+```bash
+esptool read_flash 0 ALL levoit-everest-air-backup.bin
+```
+
+> Note: may fail if watchdog-protected. Try while powered externally.
+
+### Restore Original Firmware
+
+```bash
+esptool erase_flash
+esptool write_flash 0x00 levoit-everest-air-backup.bin
+```
 
 ## Protocol Notes
 
@@ -88,105 +174,6 @@ open. Opening the back also makes the MCU power the unit off (tag `0x02` Power �
 | `0x13` | Light detect | 0/1 |
 | `0x14` | Vent angle | 45–90° |
 | `0x15` | Cover open | 0=closed 1=open |
-
-
-## Teardown / Disassembly
-Remove 3 black skrews from top
-
-![Remove Skrews](./images/back_remove_skrews.jpg)
-
-Carefully start to open from the back, pull up with help from some clips
-
-![Open](./images/back_open.jpg)
-
-Pull up left and right and remove the top
-
-![Open](./images/opened.jpg)
-
-
-## Debug Header Pinout
-
-| Pin | Signal |
-|-----|--------|
-| 1 | EN (reset) |
-| 2 | GND |
-| 3 | 3.3V |
-| 4 | TX |
-| 5 | RX |
-| 6 | IO0 |
-
-## Connect new ESP32
-
-Make sure to connect EN (reset) to GND on the Debug Header to dissable the old ESP32
-
-Pinout: 
-
-![Board pinout](./images/Uart_pins.jpg)
-![Board pinout](./images/power_pins.jpg)
-
-![Board pinout](./images/all_connected.jpg)
-
-## Flash new ESP32
-
-### Configure
-
-1. Copy `secrets-example.yaml` → `secrets.yaml` and fill in your Wi-Fi and encryption key
-2. Adjust the device name in the config if running multiple units
-3. Check the [component README](../../components/levoit/README.md) for UART pin mapping per board
-
-
-### ESPHome Web Builder / Dashboard
-
-Use the pre-generated builder yaml to flash without a local clone — all config is inlined, no `!include` or packages needed:
-
-| File | Board |
-|------|-------|
-| `levoit-everest-air-builder.yaml` | original ESP32-C3-SOLO-1 |
-| `levoit-everest-air-builder-c3.yaml` | ESP32-C3 replacement |
-| `levoit-everest-air-builder-s3.yaml` | ESP32-S3 replacement |
-
-Upload to the [ESPHome web builder](https://builder.esphome.io) or paste into the ESPHome dashboard. Regenerate with `.\make-builder-yaml.ps1` from the `devices/` folder.
-
-Or run 
-```bash
-esphome run levoit-everest-air.yaml
-```
-
-
-
-## Flash Original ESP32
-
-```bash
-esphome run levoit-everest-air.yaml
-```
-
-Reassemble and enjoy!
-
-### Prerequisites
-
-Connect to the debug header with a USB-UART adapter (3.3V TTL), crossing TX/RX:
-- Adapter TX →  RX
-- Adapter RX →  TX
-
-Connect **IO0 to GND before powering on** to enter bootloader mode.
-
-### Backup Existing Firmware
-
-```bash
-esptool read_flash 0 ALL levoit-everest-air-backup.bin
-```
-
-> Note: may fail if watchdog-protected. Try while powered externally.
-
-
-
-### Restore Original Firmware
-
-```bash
-esptool erase_flash
-esptool write_flash 0x00 levoit-everest-air-backup.bin
-```
-
 
 ## Cover Open Sensor
 

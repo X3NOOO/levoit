@@ -15,7 +15,7 @@
 | Noise | 24–50 dB |
 | Room Size | 9–50 m² (97–538 ft²) |
 | ESPHome | 2026.1.2+ |
-| PM Sensor | PM2008MS  |
+| PM Sensor | PM2008MS |
 
 ## Features
 
@@ -57,7 +57,28 @@
 
 ![Teardown](./images/teardown_4.jpg)
 
+## Install New ESP32 (Recommended)
 
+Replacing the original ESP32 allows switching back to original firmware without re-flashing and makes future updates easier.
+
+**Recommended modules** (compact and reliable):
+- Seeed XIAO ESP32-C3
+- Seeed XIAO ESP32-S3 (overkill but works)
+
+**Wiring:** 4 wires — `+3.3V`, `GND`, `RX`, `TX`
+
+> The RX/TX pads are **not** on the pin header — use the test pads near the original ESP32 on the board.
+> Pull the `EN` pin of the original ESP32 to GND to disable it.
+
+![Custom ESP wires](./images/custom_esp_wire.jpg)
+
+**Placement of new ESP**
+
+The small xiao seeeds fit into the small existing space, make sure to isolate and solder the connections.
+
+I connected to 5V, cause i had issues on the 3.3v with my xioa seeed s3. It rebooted with brownout (power issues). I think my en to gnd connection might not have been stable but still decided to use 5V.
+
+![Custom ESP wires](./images/custom_esp_placement.jpg)
 
 ## Flash Original ESP32
 
@@ -111,26 +132,3 @@ Upload to the [ESPHome web builder](https://builder.esphome.io) or paste into th
 esptool erase_flash
 esptool write_flash 0x00 levoit-core300s-backup.bin
 ```
-
-## Install New ESP32 (Recommended)
-
-Replacing the original ESP32 allows switching back to original firmware without re-flashing and makes future updates easier.
-
-**Recommended modules** (compact and reliable):
-- Seeed XIAO ESP32-C3
-- Seeed XIAO ESP32-S3 (overkill but works)
-
-**Wiring:** 4 wires — `+3.3V`, `GND`, `RX`, `TX`
-
-> The RX/TX pads are **not** on the pin header — use the test pads near the original ESP32 on the board.
-> Pull the `EN` pin of the original ESP32 to GND to disable it.
-
-![Custom ESP wires](./images/custom_esp_wire.jpg)
-
-**Placement of new ESP**
-
-The small xiao seeeds fit into the small existing space, make sure to isolate and solder the connections.
-
-I connected to 5V, cause i had issues on the 3.3v with my xioa seeed s3. It rebooted with brownout (power issues). I think my en to gnd connection might not have been stable but still decided to use 5V.
-
-![Custom ESP wires](./images/custom_esp_placement.jpg)

@@ -1,4 +1,4 @@
-[← Back](../README.md)
+[← Back](../../README.md)
 
 # Levoit Mini - Custom PCB & ESPHome Firmware
 

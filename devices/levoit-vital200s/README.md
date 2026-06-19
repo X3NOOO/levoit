@@ -17,7 +17,7 @@ Same protocol as the Vital 100S. Tested with original ESP by @dnsefe.
 | Noise | 23–58 dB |
 | Room Size | 9–87 m² (97–936 ft²) |
 | ESPHome | 2026.1.2+ |
-| Sensor |PM1003 |
+| PM Sensor | PM1003 |
 
 ## Features
 
@@ -50,11 +50,11 @@ Same protocol as the Vital 100S. Tested with original ESP by @dnsefe.
 
 > TODO: add pinout and photos
 
-## Wiring New ESP
+## Install New ESP32 (Recommended)
 
 > TODO: add wiring photos and pin mapping
 
-## Flash
+## Flash Original ESP32
 
 ### Prerequisites
 

@@ -29,11 +29,11 @@ Every purifier covered here at a glance — how it's converted to ESPHome, its s
 | [Core 300S](./devices/levoit-core300s) | Levoit | 🟢 Flash / 🔵 Add ESP | 214 m³/h | 24–50 dB | Easy | [Guide](./devices/levoit-core300s) | [Amazon](https://amzn.to/4aMVbnO) | ✅ Tested · PM2.5 + Auto mode |
 | [Core 400S](./devices/levoit-core400s) | Levoit | 🟢 Flash / 🔵 Add ESP | 442 m³/h | 24–52 dB | Hard | [Guide](./devices/levoit-core400s) | [Amazon](https://amzn.to/4vOT9vt) | ✅ Tested · 4 speeds |
 | [Core 600S](./devices/levoit-core600s) | Levoit | 🟢 Flash / 🔵 Add ESP | 641 m³/h | 26–54 dB | Hard | [Guide](./devices/levoit-core600s) | [Amazon](https://amzn.to/4opVx9z) | ✅ Tested · 4 auto modes |
-| [Vital 100S](./devices/levoit-vital100s) | Levoit | 🟢 Flash / 🔵 Add ESP | 221 m³/h | 23–52 dB | Easy | [Guide](./devices/levoit-vital100s#teardown--disassembly) | [Amazon](https://amzn.to/3SaFron) | ✅ Tested · Pet mode; detailed teardown |
+| [Vital 100S](./devices/levoit-vital100s) | Levoit | 🟢 Flash / 🔵 Add ESP | 221 m³/h | 23–52 dB | Easy | [Guide](./devices/levoit-vital100s/README.md#teardown--disassembly) | [Amazon](https://amzn.to/3SaFron) | ✅ Tested · Pet mode; detailed teardown |
 | [Vital 200S (Pro)](./devices/levoit-vital200s) | Levoit | 🟢 Flash / 🔵 Add ESP | 415 m³/h | 23–58 dB | Easy | [Guide](./devices/levoit-vital200s) | [Amazon](https://amzn.to/4xMiJn1) | ✅ Tested |
 | [Everest Air](./devices/levoit-everest-air) | Levoit | 🟢 Flash / 🔵 Add ESP | 612 m³/h | 24–56 dB | Easy | [Guide](./devices/levoit-everest-air) | [Amazon](https://amzn.to/3Q1cMB) | ✅ Tested · vent louver, PM1.0/2.5/10, Turbo |
 | [Sprout](./devices/levoit-sprout) | Levoit | 🟢 Flash / 🔵 Add ESP | 145 m³/h | 22–47 dB | Easy | [Guide](./devices/levoit-sprout) | [Amazon](https://amzn.to/4oAJs1n) | 🚧 WIP · white-noise audio (I2S MP3) |
-| [LV PUR 131S](./devices/levoit-lv131s/) | Levoit | 🔴 Custom HW | — | — | Medium | [Guide](./devices/levoit-lv131s/) | — | Custom FW + MCU & sensor upgrade |
+| [LV-PUR 131S](./devices/levoit-lv131s/) | Levoit | 🔴 Custom HW | — | — | Medium | [Guide](./devices/levoit-lv131s/) | — | Custom FW + MCU & sensor upgrade |
 | [Levoit Mini](./devices/levoit-mini) | Levoit | 🔴 Custom HW | 78 m³/h | 41.8 – 53.6 dBA | Easy | [Guide](./devices/levoit-mini) | [Amazon](https://amzn.to/4acovEh) | Full custom PCB + 3D parts |
 | [Philips AC0650](./devices/philips-600-series) | Philips| 🔵 Add ESP | 170 m³/h | 19–49 dB | Easy | [Guide](./devices/philips-600-series) | [Amazon](https://amzn.to/4vS5Ohs) | ✅ Tested · secure boot → replace module; no AQ sensor |
 | [Philips AC0651](./devices/philips-600-series) | Philips| 🔵 Add ESP | 170 m³/h | 19–49 dB | Easy | [Guide](./devices/philips-600-series) | [Amazon](https://amzn.to/4elkSyg) | ✅ Tested · adds PM2.5 (PM1003) + Auto mode |
@@ -46,6 +46,10 @@ Every purifier covered here at a glance — how it's converted to ESPHome, its s
 - 🔴 **Custom HW** — replace the controller board / build custom hardware.
 
 **CADR** and **Noise** are manufacturer specs. **Disassembly** is a rough effort estimate (Easy / Medium / Hard) — check the linked **Guide** before you start.
+
+> ### ➕ Add your own!
+> Got another air purifier running ESPHome? Add it to the list — open a **[Pull Request](https://github.com/tuct/esphome-projects/pulls)** or share it in **[Discussions](https://github.com/tuct/esphome-projects/discussions)**.
+> Two requirements: it has to be an **air purifier**, and it has to run (or be made to run) **ESPHome**. In-repo components or external projects (like the IKEA ones above) are both welcome.
 
 ## [ESPHome external component for Philips / MUJI Air Purifiers](./components/philips/README.md)
 
@@ -90,12 +94,12 @@ The Levoit Sprout additionally uses the [levoit_audio component](./components/le
 | Model | MCU Version | Status |
 |-------|-------------|--------|
 | [Levoit Sprout](./devices/levoit-sprout) | 1.0.5 |  🚧 WIP - Vital like + more| 
-| [Levoit Core 400S-P Plasma Pro](./devices/xxx) | ??? | ??? |
+| Levoit Core 400S-P Plasma Pro | ??? | ❓ Not started |
 
 
 ### Other Models / Levoit Projects
 
-* [Levoit LV PUR 131s](./devices/levoit-lv131s/) – Custom Firmware + MCU & sensor upgrade + hardware hack
+* [Levoit LV-PUR 131S](./devices/levoit-lv131s/) – Custom Firmware + MCU & sensor upgrade + hardware hack
 * [Levoit Mini](./devices/levoit-mini) – Custom PCB, 3D parts, hardware hack
 
 ### Features
