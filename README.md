@@ -39,6 +39,8 @@ Every purifier covered here at a glance — how it's converted to ESPHome, its s
 | [Philips AC0651](./devices/philips-600-series) | Philips| 🔵 Add ESP | 170 m³/h | 19–49 dB | Easy | [Guide](./devices/philips-600-series) | [Amazon](https://amzn.to/4elkSyg) | ✅ Tested · adds PM2.5 (PM1003) + Auto mode |
 | [IKEA Förnuftig](https://edvoncken.net/2024/04/ikea-fornuftig-with-esphome/) | IKEA | 🔴 Custom HW | 120 m³/h | 28–60 dB | Easy | [Blog ↗](https://edvoncken.net/2024/04/ikea-fornuftig-with-esphome/) · [C6 ↗](https://github.com/horvathgergo/esp32c6-for-fornuftig) | — | 🔗 External · dumb 3-speed fan, ESP added for control |
 | [IKEA Uppåtvind](https://github.com/jonathonlui/esphome-ikea-uppatvind) | IKEA | 🔴 Custom HW | 95 m³/h | 42.5–53.8 dB | Easy | [GitHub ↗](https://github.com/jonathonlui/esphome-ikea-uppatvind) | — | 🔗 External · small desk purifier, ESP added for control |
+| [Levoit Core 300](https://www.reddit.com/r/homeassistant/comments/1rqz9gq/turned_a_broken_dumb_air_purifier_into_a_smart/) | Levoit | 🔴 Custom HW | 214 m³/h | 24–50 dB | Easy | [Reddit ↗](https://www.reddit.com/r/homeassistant/comments/1rqz9gq/turned_a_broken_dumb_air_purifier_into_a_smart/) | — | 🔗 External · **non-smart Core 300** with broken PCB; ESP32 wired straight to the fan-speed lines → 3 interlocked GPIO switches (no MCU/UART, no sensors) |
+| [Xiaomi / Mi Air Purifiers](https://github.com/dhewg/esphome-miot) | Xiaomi | 🟢 Flash | — | — | — | [GitHub ↗](https://github.com/dhewg/esphome-miot) | — | 🔗 External · MIoT UART component; flashes the built-in ESP gateway. Covers Mi Air Purifier 3 / 3H / 3C, Pro H, and Smart 4 / 4 Lite / 4 Pro / Elite |
 
 **Methods** — how the custom firmware ends up on the device:
 - 🟢 **Flash** — flash ESPHome straight onto the device's own ESP32 (works where it isn't locked — most Levoits). Easiest; back up the stock firmware first.
@@ -282,6 +284,13 @@ Auto mode options per model:
 #### 2026.01.15 ESPHome 2025.12.5+ Compatibility
 
 * The component has been updated for ESPHome 2025.12.5
+
+
+## Related external components
+
+Not part of this repo, but built on the same idea — an ESPHome component talking the vendor's UART protocol to the purifier's MCU:
+
+* **[dhewg/esphome-miot](https://github.com/dhewg/esphome-miot)** — Xiaomi **MIoT** serial protocol. Flashes the device's built-in ESP gateway (no extra hardware) and covers a range of Xiaomi/Mi air purifiers: Mi Air Purifier 3 / 3H / 3C, Pro H, and Smart 4 / 4 Lite / 4 Pro / Elite. Also supports other Xiaomi MIoT devices (humidifiers, fans, …).
 
 
 ## Contributing
